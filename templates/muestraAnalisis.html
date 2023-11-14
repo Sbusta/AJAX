@@ -1,0 +1,447 @@
+<html>
+
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <!-- Site Properties -->
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css"
+        integrity="sha256-/Z28yXtfBv/6/alw+yZuODgTbKZm86IKbPE/5kjO/xY=" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"
+        integrity="sha256-Bhi6GMQ/72uYZcJXCJ2LToOIcN3+Cx47AZnq/Bw1f7A=" crossorigin="anonymous"></script>
+
+    <!-- <script type="text/javascript" src="{{ url_for('static', filename='js/numscript.js') }}"></script> -->
+</head>
+
+<body>
+
+    <div class="ui fixed inverted menu">    
+        <div class="ui container">
+            <a href="/analisis" class="header item">
+                {{title}}
+            </a>
+            <div class="right menu">
+                <div class="item">
+                    <a href="javascript:history.back()" class="ui red button">salir</a>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="ui main text container">
+        <div class="ui middle aligned center aligned grid">
+            <div class="column">
+                <h2 class="ui header">
+                    <div class="content">
+                        {{title}}
+                    </div>
+                </h2>
+                <img class="ui fluid image" src="/statics/img/Clusters.png">
+
+                {% for dic in datos %}
+                    {% if dic['motivacion']== 'participacion'%}
+                        <div class="ui {{dic['color']}} segment">
+                            <div class="ui statistics">
+                                <div class="{{dic['color']}} statistic">
+                                    <div class="value">
+                                        {{dic['porsentaje']}}
+                                    </div>
+                                    <div class="label">
+                                        {{dic['Cluster']}}
+                                    </div>
+
+                                </div>
+                                
+                                
+                                <div class="{{dic['color']}} statistic">
+                                    <div class="value">
+                                        {{dic['nav']['consultas']}}
+                                    </div>
+                                    <div class="label">
+                                        Consultas
+                                    </div>
+
+                                </div>
+
+                                <div class="{{dic['color']}} statistic">
+                                    <div class="value">
+                                        {{dic['nav']['certificados']}}
+                                    </div>
+                                    <div class="label">
+                                        Certificados
+                                    </div>
+
+                                </div>
+
+
+                                <div class="{{dic['color']}} statistic">
+                                    <div class="value">
+                                        {{dic['nav']['solicitudes']}}
+                                    </div>
+                                    <div class="label">
+                                        Solicitudes
+                                    </div>
+
+                                </div>
+
+
+                                <div class="{{dic['color']}} statistic">
+                                    <div class="value">
+                                        {{dic['nav']['incentivos']}}
+                                    </div>
+                                    <div class="label">
+                                        Incentivos
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                            <h3>Tipo de motivación: Participacion</h3>
+                            <h3>
+                                Se recomienda usar este sistema de gamificación: 
+                                Sistema de desafios donde se obtengan puntos.
+                            </h3>
+                        </div>
+                    {% endif%}
+
+                    {% if dic['motivacion']== 'conocimiento'%}
+                        <div class="ui {{dic['color']}} segment">
+                            <div class="ui statistics">
+                                <div class="{{dic['color']}} statistic">
+                                    <div class="value">
+                                        {{dic['porsentaje']}}
+                                    </div>
+                                    <div class="label">
+                                        {{dic['Cluster']}}
+                                    </div>
+
+                                </div>
+
+                                <div class="{{dic['color']}} statistic">
+                                    <div class="value">
+                                        {{dic['nav']['consultas']}}
+                                    </div>
+                                    <div class="label">
+                                        Consultas
+                                    </div>
+
+                                </div>
+
+                                <div class="{{dic['color']}} statistic">
+                                    <div class="value">
+                                        {{dic['nav']['certificados']}}
+                                    </div>
+                                    <div class="label">
+                                        Certificados
+                                    </div>
+
+                                </div>
+
+
+                                <div class="{{dic['color']}} statistic">
+                                    <div class="value">
+                                        {{dic['nav']['solicitudes']}}
+                                    </div>
+                                    <div class="label">
+                                        Solicitudes
+                                    </div>
+
+                                </div>
+
+
+                                <div class="{{dic['color']}} statistic">
+                                    <div class="value">
+                                        {{dic['nav']['incentivos']}}
+                                    </div>
+                                    <div class="label">
+                                        Incentivos
+                                    </div>
+
+                                </div>
+                            </div>
+                            <h3>Tipo de motivación: Conocimiento</h3>
+                            <h3>
+                                Se recomienda usar este sistema de gamificación: 
+                                Sistema de Logros.
+                            </h3>
+                        </div>
+                    {% endif%}
+
+                    {% if dic['motivacion']== 'crecimiento'%}
+                        <div class="ui {{dic['color']}} segment">
+                            <div class="ui statistics">
+                                <div class="{{dic['color']}} statistic">
+                                    <div class="value">
+                                        {{dic['porsentaje']}}
+                                    </div>
+                                    <div class="label">
+                                        {{dic['Cluster']}}
+                                    </div>
+
+                                </div>
+
+                                <div class="{{dic['color']}} statistic">
+                                    <div class="value">
+                                        {{dic['nav']['consultas']}}
+                                    </div>
+                                    <div class="label">
+                                        Consultas
+                                    </div>
+
+                                </div>
+
+                                <div class="{{dic['color']}} statistic">
+                                    <div class="value">
+                                        {{dic['nav']['certificados']}}
+                                    </div>
+                                    <div class="label">
+                                        Certificados
+                                    </div>
+
+                                </div>
+
+
+                                <div class="{{dic['color']}} statistic">
+                                    <div class="value">
+                                        {{dic['nav']['solicitudes']}}
+                                    </div>
+                                    <div class="label">
+                                        Solicitudes
+                                    </div>
+
+                                </div>
+
+
+                                <div class="{{dic['color']}} statistic">
+                                    <div class="value">
+                                        {{dic['nav']['incentivos']}}
+                                    </div>
+                                    <div class="label">
+                                        Incentivos
+                                    </div>
+
+                                </div>
+                            </div>
+                            <h3>Tipo de motivación: Crecimiento</h3>
+                            <h3>
+                                Se recomienda usar este sistema de gamificación: 
+                                Sistema de niveles al realizar tareas, desafios o logros.
+                            </h3>
+                        </div>
+                    {% endif%}
+                    
+                    {% if dic['motivacion']== 'resultados'%}
+                        <div class="ui {{dic['color']}} segment">
+                            <div class="ui statistics">
+                                <div class="{{dic['color']}} statistic">
+                                    <div class="value">
+                                        {{dic['porsentaje']}}
+                                    </div>
+                                    <div class="label">
+                                        {{dic['Cluster']}}
+                                    </div>
+
+                                </div>
+
+                                <div class="{{dic['color']}} statistic">
+                                    <div class="value">
+                                        {{dic['nav']['consultas']}}
+                                    </div>
+                                    <div class="label">
+                                        Consultas
+                                    </div>
+
+                                </div>
+
+                                <div class="{{dic['color']}} statistic">
+                                    <div class="value">
+                                        {{dic['nav']['certificados']}}
+                                    </div>
+                                    <div class="label">
+                                        Certificados
+                                    </div>
+
+                                </div>
+
+
+                                <div class="{{dic['color']}} statistic">
+                                    <div class="value">
+                                        {{dic['nav']['solicitudes']}}
+                                    </div>
+                                    <div class="label">
+                                        Solicitudes
+                                    </div>
+
+                                </div>
+
+
+                                <div class="{{dic['color']}} statistic">
+                                    <div class="value">
+                                        {{dic['nav']['incentivos']}}
+                                    </div>
+                                    <div class="label">
+                                        Incentivos
+                                    </div>
+
+                                </div>
+                            </div>
+                            <h3>Tipo de motivación: Resultados</h3>
+                            <h3>
+                                Se recomienda usar este sistema de gamificación: 
+                                Sistema de recoleccion de puntos.
+                            </h3>
+                        </div>
+                    {% endif%}
+
+                    {% if dic['motivacion']== 'recompenza'%}
+                        <div class="ui {{dic['color']}} segment">
+                            <div class="ui statistics">
+                                <div class="{{dic['color']}} statistic">
+                                    <div class="value">
+                                        {{dic['porsentaje']}}
+                                    </div>
+                                    <div class="label">
+                                        {{dic['Cluster']}}
+                                    </div>
+
+                                </div>
+
+                                <div class="{{dic['color']}} statistic">
+                                    <div class="value">
+                                        {{dic['nav']['consultas']}}
+                                    </div>
+                                    <div class="label">
+                                        Consultas
+                                    </div>
+
+                                </div>
+
+                                <div class="{{dic['color']}} statistic">
+                                    <div class="value">
+                                        {{dic['nav']['certificados']}}
+                                    </div>
+                                    <div class="label">
+                                        Certificados
+                                    </div>
+
+                                </div>
+
+
+                                <div class="{{dic['color']}} statistic">
+                                    <div class="value">
+                                        {{dic['nav']['solicitudes']}}
+                                    </div>
+                                    <div class="label">
+                                        Solicitudes
+                                    </div>
+
+                                </div>
+
+
+                                <div class="{{dic['color']}} statistic">
+                                    <div class="value">
+                                        {{dic['nav']['incentivos']}}
+                                    </div>
+                                    <div class="label">
+                                        Incentivos
+                                    </div>
+
+                                </div>
+                            </div>
+                            <h3>Tipo de motivación: Recompenza</h3>
+                            <h3>
+                                Se recomienda usar este sistema de gamificación: 
+                                Sistema de Premios tras realizar acciones.
+                            </h3>
+                        </div>
+                    {% endif%}
+
+                    {% if dic['motivacion']== 'reconocimiento'%}
+                        <div class="ui {{dic['color']}} segment">
+                            <div class="ui statistics">
+                                <div class="{{dic['color']}} statistic">
+                                    <div class="value">
+                                        {{dic['porsentaje']}}
+                                    </div>
+                                    <div class="label">
+                                        {{dic['Cluster']}}
+                                    </div>
+                                
+                                </div>
+
+                                <div class="{{dic['color']}} statistic">
+                                    <div class="value">
+                                        {{dic['nav']['consultas']}}
+                                    </div>
+                                    <div class="label">
+                                        Consultas
+                                    </div>
+
+                                </div>
+
+                                <div class="{{dic['color']}} statistic">
+                                    <div class="value">
+                                        {{dic['nav']['certificados']}}
+                                    </div>
+                                    <div class="label">
+                                        Certificados
+                                    </div>
+
+                                </div>
+
+
+                                <div class="{{dic['color']}} statistic">
+                                    <div class="value">
+                                        {{dic['nav']['solicitudes']}}
+                                    </div>
+                                    <div class="label">
+                                        Solicitudes
+                                    </div>
+
+                                </div>
+
+
+                                <div class="{{dic['color']}} statistic">
+                                    <div class="value">
+                                        {{dic['nav']['incentivos']}}
+                                    </div>
+                                    <div class="label">
+                                        Incentivos
+                                    </div>
+
+                                </div>
+                            </div>
+                            <h3>Tipo de motivación: Reconocimiento</h3>
+                            <h3>
+                                Se recomienda usar este sistema de gamificación: 
+                                Sistema de Ranking según crecimiento o desafios realizados.
+                            </h3>
+                        </div>
+                    {% endif%}
+                    
+
+                {% endfor %}
+                <h2>
+                    Descargar archivo Json
+                </h2>
+                <form method="get" action="/downloader">
+                    <button class="ui primary button" type="submit">
+                        Descargar
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+pandas
+xlsxwriter
+sklearn
+numpy
+matplotlib
+flask_cors
+werkzeug
+requests
